@@ -5,20 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shahil Shah - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #010413;
-            color: #cbd5e1;
+            background-color: #000000;
+            color: #e0e0e0;
+        }
+        
+        .font-mono-header {
+            font-family: 'Space Mono', monospace;
         }
 
         /* Animated grid background */
-        .tech-grid-bg {
+        .nothing-grid-bg {
             position: relative;
         }
 
-        .tech-grid-bg::before {
+        .nothing-grid-bg::before {
             content: '';
             position: absolute;
             top: 0;
@@ -26,50 +30,30 @@
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(to right, rgba(14, 165, 233, 0.1) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(14, 165, 233, 0.1) 1px, transparent 1px);
-            background-size: 4rem 4rem;
-            animation: bg-pan 20s linear infinite;
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 3rem 3rem;
             z-index: -1;
-        }
-
-        @keyframes bg-pan {
-            from { background-position: 0 0; }
-            to { background-position: 4rem 4rem; }
         }
 
         /* Section Heading Style */
         .section-heading {
             position: relative;
             display: inline-block;
-            padding-bottom: 0.5rem;
+            font-family: 'Space Mono', monospace;
             letter-spacing: 0.1em;
             text-transform: uppercase;
         }
-
-        .section-heading::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50%;
-            height: 2px;
-            background-color: #0ea5e9;
-        }
         
-        /* Tech-inspired card style */
-        .tech-card {
-            background: rgba(10, 25, 47, 0.5);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(14, 165, 233, 0.2);
+        /* Nothing-inspired card style */
+        .nothing-card {
+            background: #111111;
+            border: 1px solid #333;
             transition: all 0.3s ease-in-out;
         }
         
-        .tech-card:hover {
-            border-color: rgba(14, 165, 233, 0.7);
-            transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(14, 165, 233, 0.2);
+        .nothing-card:hover {
+            border-color: #e0e0e0;
         }
 
         /* Timeline for Experience section */
@@ -81,12 +65,12 @@
         .timeline::after {
             content: '';
             position: absolute;
-            width: 3px;
-            background-color: rgba(14, 165, 233, 0.2);
+            width: 2px;
+            background-color: #333;
             top: 0;
             bottom: 0;
             left: 50%;
-            margin-left: -1.5px;
+            margin-left: -1px;
         }
         .timeline-item {
             padding: 10px 40px;
@@ -96,11 +80,11 @@
         .timeline-item::after {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
-            right: -10px;
-            background-color: #010413;
-            border: 3px solid #0ea5e9;
+            width: 16px;
+            height: 16px;
+            right: -8px;
+            background-color: #000;
+            border: 2px solid #e0e0e0;
             top: 15px;
             border-radius: 50%;
             z-index: 1;
@@ -112,7 +96,7 @@
             left: 50%;
         }
         .timeline-right::after {
-            left: -10px;
+            left: -8px;
         }
         @media screen and (max-width: 768px) {
             .timeline::after {
@@ -124,7 +108,7 @@
                 padding-right: 25px;
             }
             .timeline-item::after {
-                left: 21px;
+                left: 23px;
             }
             .timeline-left, .timeline-right {
                  left: 0%;
@@ -145,27 +129,38 @@
         /* Style for the portfolio switcher */
         .portfolio-switcher button {
             transition: all 0.3s ease;
+            color: #aaa;
         }
         .portfolio-switcher button.active {
-            background-color: #0ea5e9;
-            color: #fff;
+            background-color: #fff;
+            color: #000;
+        }
+        .text-brand-red {
+            color: #ff4d4d;
+        }
+        .border-brand-red {
+            border-color: #ff4d4d;
+        }
+        .hover-bg-brand-red:hover {
+            background-color: #ff4d4d;
+            color: #000;
         }
     </style>
 </head>
-<body class="tech-grid-bg">
+<body class="nothing-grid-bg">
 
     <!-- Header & Navigation -->
-    <header class="bg-black/30 backdrop-blur-sm sticky top-0 z-50 border-b border-cyan-500/20">
+    <header class="bg-black/50 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-800">
         <nav class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition-colors duration-300 mb-4 md:mb-0">SHAHIL SHAH</a>
+            <a href="#" class="font-mono-header text-2xl font-bold text-white transition-colors duration-300 mb-4 md:mb-0">SHAHIL.SHAH</a>
             
-            <div class="portfolio-switcher flex gap-2 border border-cyan-500/30 rounded-md p-1">
-                <button id="tech-btn" class="active px-4 py-2 text-sm font-semibold rounded-md">Tech Portfolio</button>
-                <button id="writer-btn" class="px-4 py-2 text-sm font-semibold rounded-md">Content Creator</button>
+            <div class="portfolio-switcher flex gap-2 border border-gray-800 rounded-md p-1">
+                <button id="tech-btn" class="active px-4 py-2 text-sm font-semibold rounded-md font-mono-header">Tech</button>
+                <button id="writer-btn" class="px-4 py-2 text-sm font-semibold rounded-md font-mono-header">Writing</button>
             </div>
             
             <!-- Dynamic Navigation Links -->
-            <div id="nav-links" class="hidden md:flex space-x-8 items-center text-sm font-medium uppercase tracking-wider mt-4 md:mt-0">
+            <div id="nav-links" class="hidden md:flex space-x-8 items-center text-sm font-medium uppercase tracking-wider mt-4 md:mt-0 font-mono-header">
                 <!-- Links will be injected by JS -->
             </div>
             
@@ -174,7 +169,7 @@
             </button>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2 uppercase">
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2 uppercase font-mono-header">
              <!-- Mobile links will be injected by JS -->
         </div>
     </header>
@@ -188,51 +183,50 @@
             <!-- Hero Section -->
             <section id="tech-hero" class="min-h-[80vh] flex items-center scroll-reveal">
                 <div class="max-w-3xl">
-                    <p class="text-cyan-400 font-medium mb-4 text-lg">Hello, my name is</p>
-                    <h1 class="text-5xl md:text-7xl font-black mb-4 text-gray-100 tracking-tighter">Shahil Shah.</h1>
-                    <h2 class="text-4xl md:text-6xl font-bold text-gray-400 mb-8">I build solutions with code.</h2>
+                    <h1 class="font-mono-header text-5xl md:text-7xl font-bold mb-4 text-white tracking-tighter">Engineering.</h1>
+                    <h2 class="text-4xl md:text-6xl font-bold text-gray-400 mb-8">Done differently.</h2>
                     <p class="text-xl text-gray-400 max-w-xl mb-10">
-                        I'm a computer science student specializing in AI and Machine Learning, with a passion for creating innovative tech that solves real-world problems.
+                        A computer science student. Building with AI and ML to create tech that matters.
                     </p>
-                    <a href="#tech-projects" class="smooth-scroll border-2 border-cyan-400 hover:bg-cyan-400/10 text-cyan-400 font-bold py-4 px-8 rounded-sm text-lg transition-colors duration-300">
-                        Check out my work!
+                    <a href="#tech-projects" class="smooth-scroll border-2 border-white hover:bg-white hover:text-black text-white font-bold py-4 px-8 rounded-sm text-lg transition-colors duration-300 font-mono-header">
+                        View Projects
                     </a>
                 </div>
             </section>
 
             <!-- About Section -->
             <section id="tech-about" class="py-20 scroll-reveal">
-                <h2 class="section-heading text-3xl font-bold mb-12">About Me</h2>
-                <div class="max-w-4xl tech-card p-8 rounded-md">
+                <h2 class="section-heading text-2xl font-bold mb-12">About</h2>
+                <div class="max-w-4xl nothing-card p-8 rounded-md">
                     <p class="text-lg text-gray-300 leading-relaxed">
-                        I am a dedicated and passionate Computer Science and Engineering student at TOMS College of Engineering, with a strong focus on Artificial Intelligence and Machine Learning. My journey in tech has been fueled by a series of internships where I've had the opportunity to dive deep into Microsoft Azure, fundamental AI concepts, and various Machine Learning algorithms like CNN and regression. I am driven by a desire to solve real-world problems through technology and am always eager to learn and apply new skills.
+                       Computer Science at TOMS College of Engineering. Focused on AI and Machine Learning. Internships with Microsoft Azure, Elevvo Pathways, and Infosys provided a foundation in cloud fundamentals, CNN, and regression algorithms. The goal is simple: solve problems with technology.
                     </p>
                 </div>
             </section>
 
             <!-- Experience Section -->
             <section id="tech-experience" class="py-20 scroll-reveal">
-                <h2 class="section-heading text-3xl font-bold text-center mb-16">Professional Experience</h2>
+                <h2 class="section-heading text-2xl font-bold text-center mb-16">Experience</h2>
                 <div class="timeline">
                     <div class="timeline-item timeline-left">
-                        <div class="tech-card p-6 rounded-md">
-                            <p class="text-gray-500 text-sm">Nov 2025 - Feb 2026</p>
-                            <h3 class="text-xl font-bold text-cyan-400 mt-1">Infosys SpringBoard 6.0</h3>
+                        <div class="nothing-card p-6 rounded-md">
+                            <p class="text-gray-500 text-sm font-mono-header">2025.11 - 2026.02</p>
+                            <h3 class="text-xl font-bold text-white mt-1 font-mono-header">Infosys SpringBoard</h3>
                             <p class="text-gray-400 mb-3">AI Intern</p>
                         </div>
                     </div>
                      <div class="timeline-item timeline-right">
-                        <div class="tech-card p-6 rounded-md">
-                            <p class="text-gray-500 text-sm">Aug 2025 - Sep 2025</p>
-                            <h3 class="text-xl font-bold text-cyan-400 mt-1">Elevvo Pathways</h3>
-                            <p class="text-gray-400 mb-3">Machine Learning Intern</p>
+                        <div class="nothing-card p-6 rounded-md">
+                           <p class="text-gray-500 text-sm font-mono-header">2025.08 - 2025.09</p>
+                            <h3 class="text-xl font-bold text-white mt-1 font-mono-header">Elevvo Pathways</h3>
+                            <p class="text-gray-400 mb-3">ML Intern</p>
                         </div>
                     </div>
                     <div class="timeline-item timeline-left">
-                        <div class="tech-card p-6 rounded-md">
-                            <p class="text-gray-500 text-sm">May 2025 - Jun 2025</p>
-                            <h3 class="text-xl font-bold text-cyan-400 mt-1">Edunet Foundation</h3>
-                            <p class="text-gray-400 mb-3">Microsoft Azure Intern</p>
+                        <div class="nothing-card p-6 rounded-md">
+                            <p class="text-gray-500 text-sm font-mono-header">2025.05 - 2025.06</p>
+                            <h3 class="text-xl font-bold text-white mt-1 font-mono-header">Edunet Foundation</h3>
+                            <p class="text-gray-400 mb-3">Azure Intern</p>
                         </div>
                     </div>
                 </div>
@@ -240,31 +234,31 @@
 
             <!-- Projects Section -->
             <section id="tech-projects" class="py-20 scroll-reveal">
-                <h2 class="section-heading text-3xl font-bold text-center mb-12">Projects</h2>
+                <h2 class="section-heading text-2xl font-bold text-center mb-12">Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                    <div class="tech-card p-6 rounded-md">
-                        <h3 class="text-2xl font-bold mb-2 text-cyan-400">Sign Language Recognition</h3>
-                        <p class="text-gray-300 mb-4">Developed a system using CNN and Python to recognize and translate sign language.</p>
+                    <div class="nothing-card p-6 rounded-md">
+                        <h3 class="text-2xl font-bold mb-2 text-white font-mono-header">Sign Language Recognition</h3>
+                        <p class="text-gray-300 mb-4">A system for sign language translation. Built with CNN and Python.</p>
                     </div>
-                    <div class="tech-card p-6 rounded-md">
-                        <h3 class="text-2xl font-bold mb-2 text-cyan-400">A.M.A.D.E.U.S (Ongoing)</h3>
-                        <p class="text-gray-300 mb-4">Adaptive Memory and Dialogue Engine for Understanding Self. An advanced conversational AI.</p>
+                    <div class="nothing-card p-6 rounded-md">
+                        <h3 class="text-2xl font-bold mb-2 text-white font-mono-header">A.M.A.D.E.U.S</h3>
+                        <p class="text-gray-300 mb-4">(Ongoing) An adaptive dialogue engine. Exploring conversational AI.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Skills Section -->
             <section id="tech-skills" class="py-20 scroll-reveal">
-                <h2 class="section-heading text-3xl font-bold text-center mb-12">Technical Skills</h2>
-                <div class="max-w-4xl mx-auto tech-card p-8 rounded-md">
-                     <div class="flex flex-wrap justify-center gap-4 font-mono text-cyan-300">
-                        <span class="bg-cyan-900/50 px-4 py-2 rounded-sm">C++</span>
-                        <span class="bg-cyan-900/50 px-4 py-2 rounded-sm">Java</span>
-                        <span class="bg-cyan-900/50 px-4 py-2 rounded-sm">Python</span>
-                        <span class="bg-cyan-900/50 px-4 py-2 rounded-sm">OpenCV</span>
-                        <span class="bg-cyan-900/50 px-4 py-2 rounded-sm">Pandas</span>
-                        <span class="bg-cyan-900/50 px-4 py-2 rounded-sm">Tensorflow</span>
-                        <span class="bg-cyan-900/50 px-4 py-2 rounded-sm">Git</span>
+                <h2 class="section-heading text-2xl font-bold text-center mb-12">Toolkit</h2>
+                <div class="max-w-4xl mx-auto nothing-card p-8 rounded-md">
+                     <div class="flex flex-wrap justify-center gap-4 font-mono text-white">
+                        <span class="bg-gray-900 px-4 py-2 rounded-sm">C++</span>
+                        <span class="bg-gray-900 px-4 py-2 rounded-sm">Java</span>
+                        <span class="bg-gray-900 px-4 py-2 rounded-sm">Python</span>
+                        <span class="bg-gray-900 px-4 py-2 rounded-sm">OpenCV</span>
+                        <span class="bg-gray-900 px-4 py-2 rounded-sm">Pandas</span>
+                        <span class="bg-gray-900 px-4 py-2 rounded-sm">Tensorflow</span>
+                        <span class="bg-gray-900 px-4 py-2 rounded-sm">Git</span>
                     </div>
                 </div>
             </section>
@@ -277,46 +271,45 @@
              <!-- Hero Section -->
             <section id="writer-hero" class="min-h-[80vh] flex items-center scroll-reveal">
                 <div class="max-w-3xl">
-                    <p class="text-cyan-400 font-medium mb-4 text-lg">Also, I work as a</p>
-                    <h1 class="text-5xl md:text-7xl font-black mb-4 text-gray-100 tracking-tighter">Content Writer.</h1>
-                    <h2 class="text-4xl md:text-6xl font-bold text-gray-400 mb-8">I write words that connect.</h2>
+                    <h1 class="font-mono-header text-5xl md:text-7xl font-bold mb-4 text-white tracking-tighter">Words.</h1>
+                    <h2 class="text-4xl md:text-6xl font-bold text-gray-400 mb-8">Made interesting.</h2>
                     <p class="text-xl text-gray-400 max-w-xl mb-10">
-                        A creative content writer with a flair for sarcasm, turning mundane topics into compelling narratives and social media gold.
+                        Content writer. Crafting engaging narratives with a sharp, sarcastic edge. For brands that want to stand out.
                     </p>
-                    <a href="#writer-experience" class="smooth-scroll border-2 border-cyan-400 hover:bg-cyan-400/10 text-cyan-400 font-bold py-4 px-8 rounded-sm text-lg transition-colors duration-300">
-                        See my experience
+                    <a href="#writer-experience" class="smooth-scroll border-2 border-white hover:bg-white hover:text-black text-white font-bold py-4 px-8 rounded-sm text-lg transition-colors duration-300 font-mono-header">
+                        View Experience
                     </a>
                 </div>
             </section>
 
              <!-- About Section -->
             <section id="writer-about" class="py-20 scroll-reveal">
-                <h2 class="section-heading text-3xl font-bold mb-12">Summary</h2>
-                <div class="max-w-4xl tech-card p-8 rounded-md">
+                <h2 class="section-heading text-2xl font-bold mb-12">Summary</h2>
+                <div class="max-w-4xl nothing-card p-8 rounded-md">
                     <p class="text-lg text-gray-300 leading-relaxed">
-                        With over a year of experience in crafting engaging, witty, and sarcastic captions and comments, I am adept at understanding brand voice and audience to deliver top-tier content that drives engagement and amplifies online presence. I have a strong command of language, impeccable timing, and a sharp sense of humor, ready to bring a unique and bold voice to your brand.
+                        One year of experience creating witty, sarcastic, and engaging content. I focus on understanding brand voice to deliver copy that drives engagement. Strong command of language, sharp humor. Ready to bring a bold voice to your brand.
                     </p>
                 </div>
             </section>
 
              <!-- Experience Section -->
             <section id="writer-experience" class="py-20 scroll-reveal">
-                <h2 class="section-heading text-3xl font-bold text-center mb-16">Content Writing Experience</h2>
+                <h2 class="section-heading text-2xl font-bold text-center mb-16">Experience</h2>
                 <div class="timeline">
                     <div class="timeline-item timeline-left">
-                        <div class="tech-card p-6 rounded-md">
-                            <p class="text-gray-500 text-sm">July 2023 - Present</p>
-                            <h3 class="text-xl font-bold text-cyan-400 mt-1">Creativefuel</h3>
+                        <div class="nothing-card p-6 rounded-md">
+                            <p class="text-gray-500 text-sm font-mono-header">2023.07 - Present</p>
+                            <h3 class="text-xl font-bold text-white mt-1 font-mono-header">Creativefuel</h3>
                             <p class="text-gray-400 mb-3">Freelance Content Writer</p>
-                            <p class="text-sm">Optimized content for SEO, followed industry trends, and conducted background research to add depth to content.</p>
+                            <p class="text-sm">SEO content optimization. Trend analysis. In-depth research.</p>
                         </div>
                     </div>
                      <div class="timeline-item timeline-right">
-                        <div class="tech-card p-6 rounded-md">
-                            <p class="text-gray-500 text-sm">Sep 2024 - Nov 2024</p>
-                            <h3 class="text-xl font-bold text-cyan-400 mt-1">Cook N Klean</h3>
+                        <div class="nothing-card p-6 rounded-md">
+                            <p class="text-gray-500 text-sm font-mono-header">2024.09 - 2024.11</p>
+                            <h3 class="text-xl font-bold text-white mt-1 font-mono-header">Cook N Klean</h3>
                             <p class="text-gray-400 mb-3">Content Writer Intern</p>
-                             <p class="text-sm">Contributed to content creation, including script writing, blog posts, articles, and social media campaigns.</p>
+                            <p class="text-sm">Content creation: scripts, blogs, articles, social media campaigns.</p>
                         </div>
                     </div>
                 </div>
@@ -324,15 +317,15 @@
 
             <!-- Skills Section -->
             <section id="writer-skills" class="py-20 scroll-reveal">
-                <h2 class="section-heading text-3xl font-bold text-center mb-12">Writing Skills</h2>
-                <div class="max-w-4xl mx-auto tech-card p-8 rounded-md">
-                     <div class="flex flex-wrap justify-center gap-4 font-mono text-cyan-300">
-                        <span class="bg-cyan-900/50 px-4 py-2 rounded-sm">Creative Writing</span>
-                        <span class="bg-cyan-900/50 px-4 py-2 rounded-sm">SEO</span>
-                        <span class="bg-cyan-900/50 px-4 py-2 rounded-sm">Technical Writing</span>
-                        <span class="bg-cyan-900/50 px-4 py-2 rounded-sm">Blog Writing</span>
-                        <span class="bg-cyan-900/50 px-4 py-2 rounded-sm">Editing & Proofreading</span>
-                        <span class="bg-cyan-900/50 px-4 py-2 rounded-sm">Google Analytics</span>
+                <h2 class="section-heading text-2xl font-bold text-center mb-12">Toolkit</h2>
+                <div class="max-w-4xl mx-auto nothing-card p-8 rounded-md">
+                     <div class="flex flex-wrap justify-center gap-4 font-mono text-white">
+                        <span class="bg-gray-900 px-4 py-2 rounded-sm">Creative Writing</span>
+                        <span class="bg-gray-900 px-4 py-2 rounded-sm">SEO</span>
+                        <span class="bg-gray-900 px-4 py-2 rounded-sm">Technical Writing</span>
+                        <span class="bg-gray-900 px-4 py-2 rounded-sm">Blog Writing</span>
+                        <span class="bg-gray-900 px-4 py-2 rounded-sm">Editing</span>
+                        <span class="bg-gray-900 px-4 py-2 rounded-sm">Proofreading</span>
                     </div>
                 </div>
             </section>
@@ -340,22 +333,22 @@
     </main>
 
     <!-- Footer -->
-    <footer id="contact" class="py-12 border-t border-cyan-500/20">
+    <footer id="contact" class="py-20 border-t border-gray-800">
         <div class="container mx-auto px-6 text-center text-gray-400">
-            <h2 class="text-4xl font-bold mb-4 text-white">Get In Touch</h2>
-            <p class="mb-8 max-w-lg mx-auto">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, my inbox is always open!</p>
-            <a href="mailto:shahilshah65@gmail.com" class="inline-block border-2 border-cyan-400 hover:bg-cyan-400/10 text-cyan-400 font-bold py-3 px-6 rounded-sm transition-colors duration-300 mb-8">
+            <h2 class="text-4xl font-bold mb-4 text-white font-mono-header">Contact.</h2>
+            <p class="mb-8 max-w-lg mx-auto">Open to new opportunities. Let's talk.</p>
+            <a href="mailto:shahilshah65@gmail.com" class="inline-block border-2 border-brand-red text-brand-red font-bold py-3 px-6 rounded-sm transition-colors duration-300 mb-8 hover-bg-brand-red font-mono-header">
                 Say Hello
             </a>
             <div class="flex justify-center space-x-6">
-                 <a href="https://github.com/Avacadough" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-400 hover:text-cyan-400 transition-transform duration-300 transform hover:scale-110">
+                 <a href="https://github.com/Avacadough" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-400 hover:text-white transition-transform duration-300 transform hover:scale-110">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
                 </a>
-                <a href="https://www.linkedin.com/in/shahil-shah-585368248" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-400 hover:text-cyan-400 transition-transform duration-300 transform hover:scale-110">
+                <a href="https://www.linkedin.com/in/shahil-shah-585368248" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition-transform duration-300 transform hover:scale-110">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
             </div>
-            <p class="mt-8 text-sm font-mono">&copy; 2025 Shahil Shah. All rights reserved.</p>
+            <p class="mt-8 text-sm font-mono-header text-gray-600">&copy; 2025 Shahil Shah</p>
         </div>
     </footer>
 
@@ -369,33 +362,33 @@
             const mobileMenuContainer = document.getElementById('mobile-menu');
 
             const techNavLinks = `
-                <a href="#tech-about" class="smooth-scroll hover:text-cyan-400 transition-colors duration-300">About</a>
-                <a href="#tech-experience" class="smooth-scroll hover:text-cyan-400 transition-colors duration-300">Experience</a>
-                <a href="#tech-projects" class="smooth-scroll hover:text-cyan-400 transition-colors duration-300">Projects</a>
-                <a href="#tech-skills" class="smooth-scroll hover:text-cyan-400 transition-colors duration-300">Skills</a>
-                <a href="#contact" class="smooth-scroll border border-cyan-400 hover:bg-cyan-400/10 text-cyan-400 font-bold py-2 px-4 rounded-sm transition-colors duration-300">Contact</a>
+                <a href="#tech-about" class="smooth-scroll hover:text-white transition-colors duration-300">About</a>
+                <a href="#tech-experience" class="smooth-scroll hover:text-white transition-colors duration-300">Experience</a>
+                <a href="#tech-projects" class="smooth-scroll hover:text-white transition-colors duration-300">Projects</a>
+                <a href="#tech-skills" class="smooth-scroll hover:text-white transition-colors duration-300">Toolkit</a>
+                <a href="#contact" class="smooth-scroll border border-brand-red text-brand-red font-bold py-2 px-4 rounded-sm transition-colors duration-300 hover-bg-brand-red">Contact</a>
             `;
             
             const writerNavLinks = `
-                <a href="#writer-about" class="smooth-scroll hover:text-cyan-400 transition-colors duration-300">Summary</a>
-                <a href="#writer-experience" class="smooth-scroll hover:text-cyan-400 transition-colors duration-300">Experience</a>
-                <a href="#writer-skills" class="smooth-scroll hover:text-cyan-400 transition-colors duration-300">Skills</a>
-                <a href="#contact" class="smooth-scroll border border-cyan-400 hover:bg-cyan-400/10 text-cyan-400 font-bold py-2 px-4 rounded-sm transition-colors duration-300">Contact</a>
+                <a href="#writer-about" class="smooth-scroll hover:text-white transition-colors duration-300">Summary</a>
+                <a href="#writer-experience" class="smooth-scroll hover:text-white transition-colors duration-300">Experience</a>
+                <a href="#writer-skills" class="smooth-scroll hover:text-white transition-colors duration-300">Toolkit</a>
+                <a href="#contact" class="smooth-scroll border border-brand-red text-brand-red font-bold py-2 px-4 rounded-sm transition-colors duration-300 hover-bg-brand-red">Contact</a>
             `;
 
              const mobileTechNavLinks = `
-                <a href="#tech-about" class="smooth-scroll block py-2 text-center hover:text-cyan-400">About</a>
-                <a href="#tech-experience" class="smooth-scroll block py-2 text-center hover:text-cyan-400">Experience</a>
-                <a href="#tech-projects" class="smooth-scroll block py-2 text-center hover:text-cyan-400">Projects</a>
-                <a href="#tech-skills" class="smooth-scroll block py-2 text-center hover:text-cyan-400">Skills</a>
-                <a href="#contact" class="smooth-scroll block border border-cyan-400 hover:bg-cyan-400/10 text-cyan-400 font-bold py-2 px-4 rounded-sm mt-2 text-center">Contact</a>
+                <a href="#tech-about" class="smooth-scroll block py-2 text-center hover:text-white">About</a>
+                <a href="#tech-experience" class="smooth-scroll block py-2 text-center hover:text-white">Experience</a>
+                <a href="#tech-projects" class="smooth-scroll block py-2 text-center hover:text-white">Projects</a>
+                <a href="#tech-skills" class="smooth-scroll block py-2 text-center hover:text-white">Toolkit</a>
+                <a href="#contact" class="smooth-scroll block border border-brand-red text-brand-red font-bold py-2 px-4 rounded-sm mt-2 text-center hover-bg-brand-red">Contact</a>
             `;
 
             const mobileWriterNavLinks = `
-                <a href="#writer-about" class="smooth-scroll block py-2 text-center hover:text-cyan-400">Summary</a>
-                <a href="#writer-experience" class="smooth-scroll block py-2 text-center hover:text-cyan-400">Experience</a>
-                <a href="#writer-skills" class="smooth-scroll block py-2 text-center hover:text-cyan-400">Skills</a>
-                <a href="#contact" class="smooth-scroll block border border-cyan-400 hover:bg-cyan-400/10 text-cyan-400 font-bold py-2 px-4 rounded-sm mt-2 text-center">Contact</a>
+                <a href="#writer-about" class="smooth-scroll block py-2 text-center hover:text-white">Summary</a>
+                <a href="#writer-experience" class="smooth-scroll block py-2 text-center hover:text-white">Experience</a>
+                <a href="#writer-skills" class="smooth-scroll block py-2 text-center hover:text-white">Toolkit</a>
+                <a href="#contact" class="smooth-scroll block border border-brand-red text-brand-red font-bold py-2 px-4 rounded-sm mt-2 text-center hover-bg-brand-red">Contact</a>
             `;
 
             function setPortfolioView(view) {
