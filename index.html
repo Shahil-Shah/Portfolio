@@ -202,6 +202,24 @@
         .experience-card:hover {
             border-color: #ff4d4d; /* Highlight with brand red on hover */
         }
+
+        /* Featured Work Gallery */
+        .work-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .work-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.375rem;
+            border: 1px solid #333;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .work-item img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(255, 77, 77, 0.1);
+        }
     </style>
 </head>
 <body class="nothing-grid-bg">
@@ -339,8 +357,8 @@
                         <p class="text-xl text-gray-400 max-w-xl mb-10">
                             Content writer. Crafting engaging narratives with a sharp, sarcastic edge. For brands that want to stand out.
                         </p>
-                        <a href="#writer-experience" class="smooth-scroll border-2 border-white hover:bg-white hover:text-black text-white font-bold py-4 px-8 rounded-sm text-lg transition-colors duration-300 font-mono-header">
-                            View Experience
+                        <a href="#writer-work" class="smooth-scroll border-2 border-white hover:bg-white hover:text-black text-white font-bold py-4 px-8 rounded-sm text-lg transition-colors duration-300 font-mono-header">
+                            View Work
                         </a>
                     </div>
                 </section>
@@ -352,6 +370,40 @@
                         <p class="text-lg text-gray-300 leading-relaxed">
                             One year of experience creating witty, sarcastic, and engaging content. I focus on understanding brand voice to deliver copy that drives engagement. Strong command of language, sharp humor. Ready to bring a bold voice to your brand.
                         </p>
+                    </div>
+                </section>
+
+                <!-- Featured Work Section -->
+                <section id="writer-work" class="py-20 scroll-reveal">
+                    <h2 class="section-heading text-2xl font-bold text-center mb-16">Featured Work</h2>
+                    <div class="work-gallery max-w-6xl mx-auto">
+                        <div class="work-item">
+                            <img src="https://i.imgur.com/k9b6N1g.png" alt="Comment on Eggplants" onerror="this.onerror=null;this.src='https://placehold.co/600x400/000000/FFFFFF?text=Image+Error';">
+                        </div>
+                        <div class="work-item">
+                            <img src="https://i.imgur.com/39sQzJ1.png" alt="Comment on Iron Man Suit" onerror="this.onerror=null;this.src='https://placehold.co/600x400/000000/FFFFFF?text=Image+Error';">
+                        </div>
+                        <div class="work-item">
+                            <img src="https://i.imgur.com/g0t4Y8s.png" alt="Comment on Plastic Surgery" onerror="this.onerror=null;this.src='https://placehold.co/600x400/000000/FFFFFF?text=Image+Error';">
+                        </div>
+                         <div class="work-item">
+                            <img src="https://i.imgur.com/Q2F4wJZ.png" alt="Comment on Smart Driver" onerror="this.onerror=null;this.src='https://placehold.co/600x400/000000/FFFFFF?text=Image+Error';">
+                        </div>
+                        <div class="work-item">
+                             <img src="https://i.imgur.com/lM0fQ8r.png" alt="Comment on Harry Potter lookalikes" onerror="this.onerror=null;this.src='https://placehold.co/600x400/000000/FFFFFF?text=Image+Error';">
+                        </div>
+                        <div class="work-item">
+                            <img src="https://i.imgur.com/2s4jVjB.png" alt="Comment on Sania" onerror="this.onerror=null;this.src='https://placehold.co/600x400/000000/FFFFFF?text=Image+Error';">
+                        </div>
+                         <div class="work-item">
+                            <img src="https://i.imgur.com/jE1l1eT.png" alt="Comment on Fortnite cross bow" onerror="this.onerror=null;this.src='https://placehold.co/600x400/000000/FFFFFF?text=Image+Error';">
+                        </div>
+                        <div class="work-item">
+                            <img src="https://i.imgur.com/rLz9jK9.png" alt="Comment on Scooby Doo mask" onerror="this.onerror=null;this.src='https://placehold.co/600x400/000000/FFFFFF?text=Image+Error';">
+                        </div>
+                        <div class="work-item">
+                             <img src="https://i.imgur.com/w2YvEwS.png" alt="Comment on Penguins" onerror="this.onerror=null;this.src='https://placehold.co/600x400/000000/FFFFFF?text=Image+Error';">
+                        </div>
                     </div>
                 </section>
 
@@ -491,6 +543,7 @@
             `;
             const writerNavLinks = `
                 <a href="#writer-about" class="smooth-scroll hover:text-white transition-colors duration-300">Summary</a>
+                <a href="#writer-work" class="smooth-scroll hover:text-white transition-colors duration-300">Work</a>
                 <a href="#writer-experience" class="smooth-scroll hover:text-white transition-colors duration-300">Experience</a>
                 <a href="#writer-skills" class="smooth-scroll hover:text-white transition-colors duration-300">Toolkit</a>
                 <a href="#contact" class="smooth-scroll border border-brand-red text-brand-red font-bold py-2 px-4 rounded-sm transition-colors duration-300 hover-bg-brand-red">Contact</a>
@@ -504,6 +557,7 @@
             `;
             const mobileWriterNavLinks = `
                 <a href="#writer-about" class="smooth-scroll block py-2 text-center hover:text-white">Summary</a>
+                 <a href="#writer-work" class="smooth-scroll block py-2 text-center hover:text-white">Work</a>
                 <a href="#writer-experience" class="smooth-scroll block py-2 text-center hover:text-white">Experience</a>
                 <a href="#writer-skills" class="smooth-scroll block py-2 text-center hover:text-white">Toolkit</a>
                 <a href="#contact" class="smooth-scroll block border border-brand-red text-brand-red font-bold py-2 px-4 rounded-sm mt-2 text-center hover-bg-brand-red">Contact</a>
