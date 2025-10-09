@@ -247,7 +247,11 @@
                 
                 <!-- Dynamic Navigation Links -->
                 <div id="nav-links" class="hidden md:flex space-x-8 items-center text-sm font-medium uppercase tracking-wider mt-4 md:mt-0 font-mono-header">
-                    <!-- Links will be injected by JS -->
+                     <a href="#tech-about" class="smooth-scroll hover:text-white transition-colors duration-300">About</a>
+                     <a href="#tech-experience" class="smooth-scroll hover:text-white transition-colors duration-300">Experience</a>
+                     <a href="#tech-projects" class="smooth-scroll hover:text-white transition-colors duration-300">Projects</a>
+                     <a href="#tech-skills" class="smooth-scroll hover:text-white transition-colors duration-300">Toolkit</a>
+                     <a href="#contact" class="smooth-scroll border border-brand-red text-brand-red font-bold py-2 px-4 rounded-sm transition-colors duration-300 hover-bg-brand-red">Contact</a>
                 </div>
                 
                 <button id="mobile-menu-button" class="md:hidden absolute top-5 right-6 text-gray-200 focus:outline-none">
@@ -256,7 +260,11 @@
             </nav>
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2 uppercase font-mono-header">
-                 <!-- Mobile links will be injected by JS -->
+                 <a href="#tech-about" class="smooth-scroll block py-2 text-center hover:text-white">About</a>
+                 <a href="#tech-experience" class="smooth-scroll block py-2 text-center hover:text-white">Experience</a>
+                 <a href="#tech-projects" class="smooth-scroll block py-2 text-center hover:text-white">Projects</a>
+                 <a href="#tech-skills" class="smooth-scroll block py-2 text-center hover:text-white">Toolkit</a>
+                 <a href="#contact" class="smooth-scroll block border border-brand-red text-brand-red font-bold py-2 px-4 rounded-sm mt-2 text-center hover-bg-brand-red">Contact</a>
             </div>
         </header>
 
@@ -383,7 +391,7 @@
                 <!-- Featured Work Section -->
                 <section id="writer-work" class="py-20 scroll-reveal">
                     <h2 class="section-heading text-2xl font-bold text-center mb-16">Featured Work</h2>
-                    <div class="work-gallery grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto">
+                    <div class="work-gallery grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                         <div class="work-item">
                             <img src="https://i.ibb.co/07dDr2v/1.png" alt="Hall of Fame comments part 1">
                         </div>
@@ -568,7 +576,7 @@
             // --- Core Function to Switch Views ---
             function setPortfolioView(view, animate = true) {
                 const currentActive = techBtn.classList.contains('active') ? 'tech' : 'writer';
-                if (currentActive === view) return; // Don't do anything if clicking the active view
+                if (currentActive === view && animate) return; 
 
                 const switchContentLogic = () => {
                     if (view === 'tech') {
@@ -586,9 +594,8 @@
                         navLinksContainer.innerHTML = writerNavLinks;
                         mobileMenuContainer.innerHTML = mobileWriterNavLinks;
                     }
-                    addSmoothScrollListeners(); // Re-attach listeners to new nav links
+                    addSmoothScrollListeners(); 
                     
-                    // Reset and re-observe scroll animations for the new content
                     document.querySelectorAll('.scroll-reveal').forEach(el => {
                         el.classList.remove('visible');
                         revealObserver.unobserve(el);
@@ -602,8 +609,8 @@
                     setTimeout(() => {
                         switchContentLogic();
                         preloader.style.opacity = '0';
-                        setTimeout(() => preloader.style.display = 'none', 500); // Match CSS transition
-                    }, 800); // Animation duration
+                        setTimeout(() => preloader.style.display = 'none', 500);
+                    }, 800); 
                 } else {
                     switchContentLogic();
                 }
@@ -644,7 +651,7 @@
             });
             
             // --- Initial State Setup ---
-            setPortfolioView('tech', false); // Set initial view without animation
+            addSmoothScrollListeners(); // Add listeners to the initially hardcoded links
             document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
         });
     </script>
