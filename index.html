@@ -225,6 +225,17 @@
             transform: scale(1.03);
             box-shadow: 0 10px 20px rgba(255, 77, 77, 0.1);
         }
+
+        /* Skills categories */
+        .skills-category {
+            margin-bottom: 1.5rem;
+        }
+        .skills-category h4 {
+            font-family: 'Space Mono', monospace;
+            color: #a0a0a0;
+            margin-bottom: 0.5rem;
+        }
+
     </style>
 </head>
 <body class="nothing-grid-bg">
@@ -245,7 +256,7 @@
                     <button id="writer-btn" class="px-4 py-2 text-sm font-semibold rounded-md font-mono-header">Writing</button>
                 </div>
                 
-                <!-- Dynamic Navigation Links -->
+                <!-- Static Navigation Links (Default to Tech) -->
                 <div id="nav-links" class="hidden md:flex space-x-8 items-center text-sm font-medium uppercase tracking-wider mt-4 md:mt-0 font-mono-header">
                      <a href="#tech-about" class="smooth-scroll hover:text-white transition-colors duration-300">About</a>
                      <a href="#tech-experience" class="smooth-scroll hover:text-white transition-colors duration-300">Experience</a>
@@ -293,7 +304,7 @@
                     <h2 class="section-heading text-2xl font-bold mb-12">About</h2>
                     <div class="max-w-4xl nothing-card p-8 rounded-md">
                         <p class="text-lg text-gray-300 leading-relaxed">
-                           A Computer Science student focused on AI and Machine Learning. Internships with Microsoft Azure, Elevvo Pathways, and Infosys provided a foundation in cloud fundamentals, CNN, and regression algorithms. The goal is simple: solve problems with technology.
+                           A Computer Science student focused on AI and Machine Learning. Internships provided a foundation in cloud fundamentals, CNN, and regression algorithms. Currently developing PockéDoc AI, a multi-agent health assistant, and exploring conversational AI with custom Llama 3 models. The goal is simple: solve problems with technology.
                         </p>
                     </div>
                 </section>
@@ -304,23 +315,34 @@
                     <div class="timeline">
                         <div class="timeline-item timeline-left">
                             <div class="nothing-card p-6 rounded-md">
-                                <p class="text-gray-500 text-sm font-mono-header">2025.11 - 2026.02</p>
-                                <h3 class="text-xl font-bold text-white mt-1 font-mono-header">Infosys SpringBoard</h3>
-                                <p class="text-gray-400 mb-3">AI Intern</p>
+                                <p class="text-gray-500 text-sm font-mono-header">Oct. 2025 - Present</p>
+                                <h3 class="text-xl font-bold text-white mt-1 font-mono-header">Aarya Foundation</h3>
+                                <p class="text-gray-400 mb-3">Project Intern - Machine Learning (Hyderabad)</p>
+                                <p class="text-sm text-gray-300">Developing "PockéDoc AI," a multi-agent health assistant using Google's PHA framework, Llama 3, Python, PyTorch, LangChain, and HuggingFace.</p>
                             </div>
                         </div>
-                         <div class="timeline-item timeline-right">
+                        <div class="timeline-item timeline-right">
                             <div class="nothing-card p-6 rounded-md">
-                               <p class="text-gray-500 text-sm font-mono-header">2025.08 - 2025.09</p>
-                                <h3 class="text-xl font-bold text-white mt-1 font-mono-header">Elevvo Pathways</h3>
-                                <p class="text-gray-400 mb-3">ML Intern</p>
+                               <p class="text-gray-500 text-sm font-mono-header">Nov. 2025 (Upcoming)</p>
+                                <h3 class="text-xl font-bold text-white mt-1 font-mono-header">Infosys SpringBoard 6.0</h3>
+                                <p class="text-gray-400 mb-3">Project Intern - AI (Bangalore)</p>
+                                <p class="text-sm text-gray-300">Selected for a structured AI program focused on ML, NLP, and data analytics.</p>
                             </div>
                         </div>
                         <div class="timeline-item timeline-left">
                             <div class="nothing-card p-6 rounded-md">
-                                <p class="text-gray-500 text-sm font-mono-header">2025.05 - 2025.06</p>
+                                <p class="text-gray-500 text-sm font-mono-header">Aug. 2025 - Sep. 2025</p>
+                                <h3 class="text-xl font-bold text-white mt-1 font-mono-header">Elevvo Pathways</h3>
+                                <p class="text-gray-400 mb-3">Intern - Machine Learning (Cairo)</p>
+                                <p class="text-sm text-gray-300">Explored core ML algorithms (CNNs, regression) and executed image preprocessing tasks.</p>
+                            </div>
+                        </div>
+                         <div class="timeline-item timeline-right">
+                            <div class="nothing-card p-6 rounded-md">
+                                <p class="text-gray-500 text-sm font-mono-header">May. 2025 - Jun. 2025</p>
                                 <h3 class="text-xl font-bold text-white mt-1 font-mono-header">Edunet Foundation</h3>
-                                <p class="text-gray-400 mb-3">Azure Intern</p>
+                                <p class="text-gray-400 mb-3">Intern - Machine Learning (Microsoft Azure) (Bangalore)</p>
+                                <p class="text-sm text-gray-300">Built understanding of AI via Azure ML modules; applied concepts in ML model development projects.</p>
                             </div>
                         </div>
                     </div>
@@ -332,26 +354,26 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                         <div class="nothing-card p-6 rounded-md">
                             <h3 class="text-2xl font-bold mb-2 text-white font-mono-header">Sign Language Recognition</h3>
-                            <p class="text-gray-300 mb-4">A system for sign language translation. Built with CNN and Python.</p>
+                            <p class="text-sm text-gray-400 mb-2">[TensorFlow/PyTorch, CNN, Python, OpenCV]</p>
+                            <p class="text-gray-300 mb-4">Trained a CNN to classify ASL gestures from real-time video, using an OpenCV pipeline for hand segmentation and gesture-to-text translation.</p>
                         </div>
-                        <div class="nothing-card p-8 rounded-md">
+                        <div class="nothing-card p-6 rounded-md">
                             <h3 class="text-2xl font-bold mb-2 text-white font-mono-header">Amadeus</h3>
+                             <p class="text-sm text-gray-400 mb-2">[Full-Stack, Llama 3, JavaScript, Node.js]</p>
                             <div class="flex space-x-4 mb-4">
                                 <a href="https://a-m-a-d-e-u-s.vercel.app" target="_blank" rel="noopener noreferrer" class="text-brand-red hover:underline">Live Demo</a>
                             </div>
-                            <p class="text-gray-300 mb-4">
-                                A secure, private, and intelligent journaling application designed for self-reflection through conversation with a compassionate AI companion. The experience is crafted to feel calm, intuitive, and trustworthy.
-                            </p>
-                            <h4 class="font-semibold text-white mt-4 mb-2 font-mono-header">KEY FEATURES:</h4>
-                            <ul class="text-sm list-disc list-inside text-gray-400 space-y-1 mb-4">
-                                <li><strong>Conversational AI Core:</strong> Powered by Meta's Llama 3 model for empathetic responses.</li>
-                                <li><strong>Secure API Architecture:</strong> Uses a serverless proxy on Vercel to protect API credentials.</li>
-                                <li><strong>Persistent & Private Memory:</strong> Saves journal entries to the browser's local storage.</li>
-                                <li><strong>Polished UX:</strong> Minimalist UI with dark/light modes and subtle animations.</li>
-                                <li><strong>User Control:</strong> Settings panel to toggle appearance and export conversation history.</li>
-                            </ul>
-                            <h4 class="font-semibold text-white mt-4 mb-2 font-mono-header">TECH STACK:</h4>
-                             <p class="text-sm text-gray-400">Vanilla JavaScript, HTML5, Tailwind CSS, Vercel, and the Replicate API.</p>
+                            <p class="text-gray-300 mb-4">Developed a full-stack conversational AI app with a custom Llama 3 persona for self-reflection, featuring secure API handling and user data ownership (local storage).</p>
+                        </div>
+                         <div class="nothing-card p-6 rounded-md">
+                            <h3 class="text-2xl font-bold mb-2 text-white font-mono-header">Student Score Prediction</h3>
+                             <p class="text-sm text-gray-400 mb-2">[Regression, EDA]</p>
+                            <p class="text-gray-300 mb-4">Developed Linear and Polynomial Regression models to predict student scores based on study hours, including comprehensive EDA and model comparison.</p>
+                        </div>
+                         <div class="nothing-card p-6 rounded-md">
+                            <h3 class="text-2xl font-bold mb-2 text-white font-mono-header">Customer Segmentation</h3>
+                            <p class="text-sm text-gray-400 mb-2">[K-Means Clustering, Visualization]</p>
+                            <p class="text-gray-300 mb-4">Applied K-Means Clustering (k=5) to segment mall customers by income and spending, delivering visualizations for targeted marketing.</p>
                         </div>
                     </div>
                 </section>
@@ -359,16 +381,66 @@
                 <!-- Skills Section -->
                 <section id="tech-skills" class="py-20 scroll-reveal">
                     <h2 class="section-heading text-2xl font-bold text-center mb-12">Toolkit</h2>
+                    <div class="max-w-4xl mx-auto nothing-card p-8 rounded-md text-center">
+                         <div class="skills-category">
+                            <h4>Languages</h4>
+                            <div class="flex flex-wrap justify-center gap-3 font-mono text-white">
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">Python</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">Java</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">C++</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">C</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">SQL</span>
+                            </div>
+                         </div>
+                          <div class="skills-category">
+                            <h4>ML/AI Frameworks</h4>
+                            <div class="flex flex-wrap justify-center gap-3 font-mono text-white">
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">TensorFlow</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">PyTorch</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">Keras</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">Scikit-Learn</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">XGBoost</span>
+                            </div>
+                         </div>
+                          <div class="skills-category">
+                            <h4>NLP/GenAI & Vision</h4>
+                             <div class="flex flex-wrap justify-center gap-3 font-mono text-white">
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">Hugging Face</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">LangChain</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">NLTK</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">OpenCV</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">PIL</span>
+                            </div>
+                         </div>
+                         <div class="skills-category">
+                            <h4>Data Tools</h4>
+                             <div class="flex flex-wrap justify-center gap-3 font-mono text-white">
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">Pandas</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">NumPy</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">Matplotlib</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">Seaborn</span>
+                            </div>
+                         </div>
+                         <div class="skills-category">
+                            <h4>Cloud / Other Tools</h4>
+                             <div class="flex flex-wrap justify-center gap-3 font-mono text-white">
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">MS Azure (ML Studio)</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">Git</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">VS Code</span>
+                                <span class="bg-gray-900 px-4 py-2 rounded-sm">Google Colab</span>
+                            </div>
+                         </div>
+                    </div>
+                </section>
+
+                <!-- Certifications Section -->
+                 <section id="tech-certifications" class="py-20 scroll-reveal">
+                    <h2 class="section-heading text-2xl font-bold text-center mb-12">Certifications</h2>
                     <div class="max-w-4xl mx-auto nothing-card p-8 rounded-md">
-                         <div class="flex flex-wrap justify-center gap-4 font-mono text-white">
-                            <span class="bg-gray-900 px-4 py-2 rounded-sm">C++</span>
-                            <span class="bg-gray-900 px-4 py-2 rounded-sm">Java</span>
-                            <span class="bg-gray-900 px-4 py-2 rounded-sm">Python</span>
-                            <span class="bg-gray-900 px-4 py-2 rounded-sm">OpenCV</span>
-                            <span class="bg-gray-900 px-4 py-2 rounded-sm">Pandas</span>
-                            <span class="bg-gray-900 px-4 py-2 rounded-sm">Tensorflow</span>
-                            <span class="bg-gray-900 px-4 py-2 rounded-sm">Git</span>
-                        </div>
+                         <ul class="text-center list-none text-gray-300 space-y-2 font-mono">
+                            <li>Microsoft - Azure AI Fundamentals: Generative AI</li>
+                            <li>Microsoft - Azure AI Fundamentals: Natural Language Processing</li>
+                         </ul>
                     </div>
                 </section>
             </div>
@@ -406,18 +478,18 @@
                 <!-- Featured Work Section -->
                 <section id="writer-work" class="py-20 scroll-reveal">
                     <h2 class="section-heading text-2xl font-bold text-center mb-16">Featured Work</h2>
-                    <div class="work-gallery grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto">
+                    <div class="work-gallery grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                         <div class="work-item">
-                            <img src="https://i.ibb.co/07dDr2v/1.png" alt="Hall of Fame comments part 1">
+                            <img src="https://i.ibb.co/L9YvDq1/1.jpg" alt="Hall of Fame comments part 1">
                         </div>
                         <div class="work-item">
-                           <img src="https://i.ibb.co/4nM41zJR/2.png" alt="Hall of Fame comments part 2">
+                           <img src="https://i.ibb.co/yQn7s0S/2.jpg" alt="Hall of Fame comments part 2">
                         </div>
                         <div class="work-item">
-                            <img src="https://i.ibb.co/zHJp1rBC/3.png" alt="Hall of Fame comments part 3">
+                            <img src="https://i.ibb.co/PN4M3t3/3.jpg" alt="Hall of Fame comments part 3">
                         </div>
                          <div class="work-item">
-                            <img src="https://i.ibb.co/k2HYkXHt/4.png" alt="Hall of Fame comments part 4">
+                            <img src="https://i.ibb.co/Zc29Y68/4.jpg" alt="Hall of Fame comments part 4">
                         </div>
                     </div>
                 </section>
@@ -591,7 +663,10 @@
             // --- Core Function to Switch Views ---
             function setPortfolioView(view, animate = true) {
                 const currentActive = techBtn.classList.contains('active') ? 'tech' : 'writer';
-                if (currentActive === view && animate) return; 
+                // Only animate if the view is actually changing
+                const shouldAnimate = animate && currentActive !== view; 
+
+                if (currentActive === view && !animate) return; // Prevent unnecessary work if already on the correct view without animation request
 
                 const switchContentLogic = () => {
                     if (view === 'tech') {
@@ -618,14 +693,17 @@
                     });
                 };
 
-                if (animate) {
+                if (shouldAnimate) {
                     preloader.style.display = 'flex';
                     preloader.style.opacity = '1';
                     setTimeout(() => {
                         switchContentLogic();
-                        preloader.style.opacity = '0';
-                        setTimeout(() => preloader.style.display = 'none', 500);
-                    }, 800); 
+                        // Delay fade out slightly to ensure content is swapped
+                        setTimeout(() => {
+                           preloader.style.opacity = '0';
+                           setTimeout(() => preloader.style.display = 'none', 500); // Wait for fade out
+                        }, 50); 
+                    }, 700); // Give time for preloader dot animation
                 } else {
                     switchContentLogic();
                 }
@@ -634,6 +712,10 @@
             // --- Smooth Scrolling ---
             function addSmoothScrollListeners() {
                 document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+                    // Remove existing listeners to prevent duplicates
+                    anchor.replaceWith(anchor.cloneNode(true));
+                });
+                 document.querySelectorAll('.smooth-scroll').forEach(anchor => {
                     anchor.addEventListener('click', function (e) {
                         e.preventDefault();
                         const targetId = this.getAttribute('href');
@@ -643,7 +725,7 @@
                             const header = document.querySelector('header');
                             const headerHeight = header ? header.offsetHeight : 0;
                             const elementPosition = targetElement.getBoundingClientRect().top;
-                            const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20; // Added 20px offset
                       
                             window.scrollTo({
                                 top: offsetPosition,
@@ -651,6 +733,7 @@
                             });
                         }
 
+                        // Close mobile menu if open
                         if (!mobileMenu.classList.contains('hidden')) {
                             mobileMenu.classList.add('hidden');
                         }
